@@ -1,0 +1,109 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+
+int len = 0, adder = 1, len_tmp, res;
+int data_user = 42, data_tmp = 42;
+
+void get_length() {
+    int Value_returned;
+    while (data_tmp == 0) {
+        Value_returned = 1;
+        break;
+    }
+    while (data_tmp != 0) {
+        data_tmp = data_tmp / 2;
+        len += adder;
+    }
+
+    printf("1. La valeur de data_temps est egal a : %d", data_tmp);
+    printf("\n1. La valeur de len est egal a : %d", len);
+}
+
+void deep_copy() {
+    len_tmp = len;                         // On transfere la valeur de len ainsi que celle de data_tmp
+    data_tmp = data_user;                  // a len_tmp et data_user
+}
+
+void shift_l() {
+    int Value_returned;
+    while (Value_returned = 1) {
+        len -= adder;
+
+        if (len == 0) {
+            Value_returned = 1;
+            break;
+        }
+        else {
+            data_tmp = (data_tmp * 2);
+            continue;
+        }
+    }
+
+    printf("\n2. La valeur de data_temps est egal a : %d", data_tmp);
+    printf("\n2. La valeur de len est egal a : %d", len);
+
+}
+
+void shift_r() {
+    int Value_returned;
+    while (Value_returned = 1) {
+        len_tmp -= adder;
+
+        if (len_tmp == 0) {
+            Value_returned = 1;
+            break;
+        }
+        else {
+            data_tmp = (data_tmp / 2);
+            continue;
+        }
+    }
+
+    printf("\n3. La valeur de data_temps est egal a : %d", data_tmp);
+    printf("\n3. La valeur de len est egal a : %d", len);
+}
+
+int fin() {
+    int Value_returned;
+    while (Value_returned = 1) {
+        data_tmp -= adder;
+
+        if (data_tmp == 0) {
+            return true;
+        }
+        else {
+            return false;
+            continue;
+        }
+    }
+}
+
+int alt(int final_result) {
+    if (final_result == 0) {
+        return false;
+    }
+    else
+        return true;
+}
+int main() {
+    int Final_Value;
+    int Data;
+
+    get_length();
+    deep_copy();
+    shift_l();
+    shift_r();
+
+    Final_Value = fin();
+    Data = alt(Final_Value);
+
+    char Result_Output[] = "\nLa valeur de RES est : ";
+
+    printf("\n%s", Result_Output);
+    printf("%d", Data);
+
+
+    return 0;
+}
